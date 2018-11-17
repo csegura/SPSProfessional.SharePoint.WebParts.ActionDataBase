@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="to_html.xslt"?>
+<?xml-stylesheet type="text/xsl" href="to_html.xslt"?><page>
+  <title>ActionDataBase Generator</title>
+  <titleorder />
+  <description />
+  <content>&lt;p&gt;The generator does not require any additional installation, you will be able to use it from the server as well as from your own computer network.  &lt;h4&gt;Use&lt;/h4&gt; &lt;p&gt;- Run the &lt;strong&gt;SPSProfessional.ActionDataBase.Generator.exe&lt;/strong&gt; file  &lt;p&gt;- In the File menu select "Database Connect"  &lt;p&gt;&lt;img alt="Generator_File_DataBaseConnect" src="images/images_adb/Generator_File_DataBaseConnect.gif" border="0"&gt;  &lt;p&gt;- A window will open to connect to the SQL server that you wish to use.  &lt;p&gt;&lt;img alt="Generator_DataBaseConnect" src="images/images_adb/Generator_DataBaseConnect.gif"&gt;  &lt;p&gt;- By default the generator will search your network servers available and will fill in the drop-down list with all those servers who have been found.  &lt;p&gt;- If your server is not there, you can manually type it in.  &lt;p&gt;- Enter a username and password to access the server. We recommend that you use the integrated security; you only should activate the "&lt;em&gt;Integrated Security box&lt;/em&gt;, through the integrated security you will access the server using the user name and password that you introduced at the beginning of the session.  &lt;p&gt;- Do a connection test; if the test is successful, the drop-down list "Database" will be filled with the database list available in the server that you have previously selected. If not an error message will appear and you have to re-examine the data that you have provided.  &lt;p&gt;- Once the database you want to work with is selected, press "OK". At this time, the “&lt;b&gt;&lt;i&gt;ActionDataBase Generator”&lt;/i&gt;&lt;/b&gt; will download on the left side all the tables and views available in the database.  &lt;p&gt;&lt;img alt="Generator_TablesViews" src="images/images_adb/Generator_TablesViews.gif"&gt;  &lt;p&gt;-You can select a table or view and use the context menu to generate a query, or you can type the query on the right side on the command tab  &lt;p&gt;&lt;img alt="Generator_TablesViewsContextMenu" src="images/images_adb/Generator_TablesViewsContextMenu.gif"&gt;  &lt;p&gt;-If you choose to use the context menu this will generate a select statement and it will run automatically in the command tab.  &lt;p&gt;&lt;img alt="Generator_SelectCommand.gif" src="images/images_adb/Generator_SelectCommand.gif"&gt;  &lt;p&gt;- At this time it may create a grid or Form from the recovered data&lt;/p&gt;</content>
+  <keywords />
+  <parent>00000000-0000-0000-0000-000000000000</parent>
+  <isfrontpage>False</isfrontpage>
+  <showinlist>True</showinlist>
+  <ispublished>True</ispublished>
+  <datecreated>2008-04-28 20:05:12</datecreated>
+  <datemodified>2008-04-28 21:50:33</datemodified>
+</page>

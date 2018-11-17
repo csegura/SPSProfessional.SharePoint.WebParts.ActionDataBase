@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="to_html.xslt"?><page>
+  <title>ActionDataBaseGrid - Quick Guide</title>
+  <titleorder />
+  <description />
+  <content>&lt;p&gt;- This quick guide will show us how to run a &lt;strong&gt;ActionDataBaseGrid&lt;/strong&gt;  &lt;p&gt;&lt;img src="images/images_adb/Generator_GenerateGridButton.gif"&gt;  &lt;p&gt;- Click on the "Generate Grid" icon, the file configuration of the grid will be generated and you will be guided to the "XML Grid" results tab  &lt;p&gt;&lt;img src="images/images_adb/Generator_GridXMLTab.gif"&gt; &lt;/p&gt; &lt;p&gt;- If you wish you can edit this part directly in the XML configuration file or if you prefer you can use the advanced editor on the "XML Grid Editor" tab  &lt;p&gt;- You can use the "Validate XML" icon to validate the XML configuration file if you have chosen to modify it by hand, in this case, if there are any errors these errors will be displayed on the"Errors" tab.  &lt;p&gt;- There is an icon "Copy" to copy the configuration file content to the clipboard.  &lt;p&gt;- We will use this icon.  &lt;p&gt;- We will go to SharePoint and we will create a new webparts page.  &lt;p&gt;- We will Add the el webpart &lt;b&gt;&lt;i&gt;ActionDataBaseGrid&lt;/i&gt;&lt;/b&gt;  &lt;p&gt;&lt;img src="images/images_adb/WebParts_ActionDataBaseGrid.gif"&gt;&lt;/p&gt; &lt;p&gt;-Once the web part is added to our site we have to configure it.  &lt;p&gt;&lt;img src="images/images_adb/WebParts_ActionDataBaseGrid1.gif"&gt;&lt;/p&gt; &lt;p&gt;- For which we can use the link &lt;b&gt;"Check webpart properties in tool panel"&lt;/b&gt;  &lt;p&gt;- showing the properties panel  &lt;p&gt;&lt;img src="images/images_adb/WebParts_ActionDataBaseGridProperties.gif"&gt; &lt;/p&gt; &lt;p&gt;- Click the icon to the right of the configuration box to paste the XML contents that we have previously generated with the generator.  &lt;p&gt;&lt;img src="images/images_adb/WebParts_XMLConfiguration.gif"&gt; &lt;/p&gt; &lt;p&gt;- Once the XML configuration is pasted, press Ok and then accept the changes.  &lt;p&gt;- We will have our first &lt;strong&gt;ActionDataBaseGrid&lt;/strong&gt; running.&lt;/p&gt; &lt;p&gt;&lt;img src="images/images_adb/ActionDataBaseGrid_First.gif"&gt;&lt;/p&gt;</content>
+  <keywords />
+  <parent>00000000-0000-0000-0000-000000000000</parent>
+  <isfrontpage>False</isfrontpage>
+  <showinlist>True</showinlist>
+  <ispublished>True</ispublished>
+  <datecreated>2008-04-28 22:44:48</datecreated>
+  <datemodified>2008-04-28 22:44:48</datemodified>
+</page>

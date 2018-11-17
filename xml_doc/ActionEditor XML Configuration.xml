@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="to_html.xslt"?>
+<?xml-stylesheet type="text/xsl" href="to_html.xslt"?><page>
+  <title>ActionEditor XML Configuration</title>
+  <titleorder />
+  <description />
+  <content>&lt;h3&gt;DataBase – Element for the connection chain configuration &lt;/h3&gt; &lt;p&gt;&lt;br&gt;&lt;strong&gt;Attributes:&lt;br&gt;&lt;font color="#004080"&gt;ConnectionString&lt;/font&gt;&lt;/strong&gt; - (string) -&amp;nbsp; Contains the connection chain to the SQL Server&lt;br&gt;&lt;br&gt;Example&lt;/p&gt;&lt;pre&gt;&lt;span style="color: #0000ff"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;DataBase&lt;/span&gt; &lt;span style="color: #ff0000"&gt;ConnectionString&lt;/span&gt;=&lt;span style="color: #0000ff"&gt;"Data Source=W2K3;Initial Catalog=Northwind;&lt;br&gt;                            Integrated Security=True;User ID=;Password="&lt;/span&gt; &lt;span style="color: #0000ff"&gt;&amp;gt;&lt;/span&gt;
+&lt;span style="color: #0000ff"&gt;  &amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;Table&lt;/span&gt; ....&lt;span style="color: #0000ff"&gt;&amp;gt;&lt;/span&gt;
+&lt;span style="color: #0000ff"&gt;   &amp;lt;&lt;/span&gt;&lt;font color="#800000"&gt;IdentityColumn&lt;/font&gt; .... &lt;span style="color: #0000ff"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span style="color: #0000ff"&gt;  &amp;lt;/&lt;/span&gt;&lt;span style="color: #800000"&gt;Table&lt;/span&gt;&lt;span style="color: #0000ff"&gt;&amp;gt;&lt;/span&gt;
+&lt;span style="color: #0000ff"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #800000"&gt;DataBase&lt;/span&gt;&lt;span style="color: #0000ff"&gt;&amp;gt;  &lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Contains element: Table&lt;/p&gt;&lt;br&gt;
+&lt;h3&gt;Table – Element for the configuration of the table that we are going to edit &lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Attributes:&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;&lt;font color="#004080"&gt;Name&lt;/font&gt;&lt;/strong&gt; - (string) - table’s name that we are going to edit in the database&lt;br&gt;&lt;br&gt;Example&lt;/p&gt;&lt;pre&gt;&lt;span style="color: #0000ff"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;Table&lt;/span&gt; &lt;span style="color: #ff0000"&gt;Name&lt;/span&gt;=&lt;span style="color: #0000ff"&gt;"dbo.Customers"&lt;/span&gt;&lt;span style="color: #0000ff"&gt;&amp;gt;&lt;/span&gt;
+&lt;span style="color: #0000ff"&gt;  &amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;IdentityColumn&lt;/span&gt; &lt;span style="color: #ff0000"&gt;Name&lt;/span&gt;=&lt;span style="color: #0000ff"&gt;"CustomerID"&lt;/span&gt; &lt;span style="color: #ff0000"&gt;Type&lt;/span&gt;=&lt;span style="color: #0000ff"&gt;"NChar"&lt;/span&gt; &lt;span style="color: #0000ff"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span style="color: #0000ff"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #800000"&gt;Table&lt;/span&gt;&lt;span style="color: #0000ff"&gt;&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;/pre&gt;&lt;span style="color: #0000ff"&gt;&lt;/span&gt;
+&lt;p&gt;Contains element: IdentityColumn&lt;br&gt;&lt;/p&gt;
+&lt;h3&gt;IdentityColumn – Element for the keys to the table&lt;/h3&gt;
+&lt;p&gt;We will identify each one of the columns through which we will recover a unique table register (usually the columns table entity)&lt;br&gt;&lt;br&gt;&lt;strong&gt;Attributes:&lt;br&gt;&lt;/strong&gt;&lt;strong&gt;&lt;font color="#004080"&gt;Name&lt;/font&gt;&lt;/strong&gt; - (string) -&amp;nbsp; Column name&lt;br&gt;&lt;strong&gt;&lt;font color="#004080"&gt;Type&lt;/font&gt;&lt;/strong&gt; - (string) – Data type (SQL Server)&lt;br&gt;&lt;strong&gt;&lt;font color="#004080"&gt;Incremental&lt;/font&gt;&lt;/strong&gt; - (boolean) - If it is a field with auto-increase&lt;br&gt;&lt;br&gt;Example:&lt;/p&gt;&lt;pre&gt;&lt;span style="color: #0000ff"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;Table&lt;/span&gt; &lt;span style="color: #ff0000"&gt;Name&lt;/span&gt;=&lt;span style="color: #0000ff"&gt;"dbo.Customers"&lt;/span&gt;&lt;span style="color: #0000ff"&gt;&amp;gt;&lt;/span&gt;
+&lt;span style="color: #0000ff"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;IdentityColumn&lt;/span&gt; &lt;span style="color: #ff0000"&gt;Name&lt;/span&gt;=&lt;span style="color: #0000ff"&gt;"CustomerID"&lt;/span&gt; &lt;span style="color: #ff0000"&gt;Type&lt;/span&gt;=&lt;span style="color: #0000ff"&gt;"NChar"&lt;/span&gt; &lt;span style="color: #ff0000"&gt;Incremental&lt;/span&gt;=&lt;span style="color: #0000ff"&gt;"false"&lt;/span&gt; &lt;span style="color: #0000ff"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span style="color: #0000ff"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #800000"&gt;Table&lt;/span&gt;&lt;span style="color: #0000ff"&gt;&amp;gt;&lt;/span&gt;
+
+&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;See: ActionDatabaseEditor XML - ActionToolBars&amp;nbsp; &lt;br&gt;See: ActionDatabaseEditor XML - Fields&lt;/p&gt;</content>
+  <keywords />
+  <parent>00000000-0000-0000-0000-000000000000</parent>
+  <isfrontpage>False</isfrontpage>
+  <showinlist>True</showinlist>
+  <ispublished>True</ispublished>
+  <datecreated>2008-05-05 00:04:52</datecreated>
+  <datemodified>2008-05-05 00:04:52</datemodified>
+</page>

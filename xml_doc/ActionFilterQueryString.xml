@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="to_html.xslt"?><page>
+  <title>ActionFilterQueryString</title>
+  <titleorder />
+  <description />
+  <content>&lt;p&gt;The &lt;strong&gt;ActionFilterQueryString&lt;/strong&gt; allows to take one or more parameters that are already provided in the URL and transfer them to other webparts.  &lt;p&gt;Simply we have to configure in the webpart properties the parameters names, they must&amp;nbsp; be separated by commas in the event that there is more than one.&lt;/p&gt; &lt;p&gt;&lt;img src="images/images_adb/ActionFilterQueryStringProperties.gif"&gt; &lt;br&gt;&lt;br&gt;In the "Variable Names" field we will introduce the variables names separated by commas, for example to take the CustomerID parameter as an &lt;a href="http://&amp;lt;url"&gt;http://&amp;lt;url&lt;/a&gt;&amp;gt;?CustomerID=100 URL we must introduce CustomerID &lt;/p&gt; &lt;p&gt;&lt;img src="images/images_adb/ActionFilterQueryStringAddFilterParameters1.gif"&gt;&lt;/p&gt; &lt;p&gt;Once the parameter’s name is introduced we will be able to connect the &lt;strong&gt;ActionFilterQueryString&lt;/strong&gt; to another WebPart, This web part can be an &lt;strong&gt;ActionEditor&lt;/strong&gt;, &lt;strong&gt;ActionGrid&lt;/strong&gt; or any other in SharePoint  &lt;p&gt;&lt;img src="images/images_adb/ActionFilterQueryStringConnectWebParts.gif"&gt;  &lt;p&gt;Later we have to match the Consumer with the server ( they don’t need to have the same name)  &lt;p&gt;&lt;img src="images/images_adb/ActionFilterQueryStringConnectWebParts1.gif"&gt;&lt;br&gt;&lt;br&gt;&lt;img src="images/images_adb/ActionFilterQueryStringConnectWebParts2.gif"&gt;  &lt;p&gt;Once the connection is completed we can transfer a parameter in the URL, which will be collected by the &lt;strong&gt;ActionFilterQueryString&lt;/strong&gt; and delivered to the corresponding webpart. In the picture below it has been used to filter the orders belonging to a client.  &lt;p&gt;&lt;img src="images/images_adb/ActionFilterQueryStringURL.gif"&gt;&lt;/p&gt;</content>
+  <keywords />
+  <parent>eb91727f-c6e5-4d84-b9dd-c5773e2261eb</parent>
+  <isfrontpage>False</isfrontpage>
+  <showinlist>True</showinlist>
+  <ispublished>True</ispublished>
+  <datecreated>2008-05-05 12:03:59</datecreated>
+  <datemodified>2008-05-05 12:03:59</datemodified>
+</page>

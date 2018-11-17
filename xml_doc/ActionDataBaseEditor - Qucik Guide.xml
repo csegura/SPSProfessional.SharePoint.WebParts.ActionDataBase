@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="to_html.xslt"?>
+<?xml-stylesheet type="text/xsl" href="to_html.xslt"?><page>
+  <title>ActionDataBaseEditor Quick Guide</title>
+  <titleorder />
+  <description />
+  <content>&lt;p&gt;Next we will configure an &lt;strong&gt;ActionDataBaseEditor&lt;/strong&gt; to edit data from the"Customers" table.  &lt;p&gt;- Returning to the generator from the "Command" tab  &lt;p&gt;&lt;img src="images/images_adb/Generator_SelectCommand.gif"&gt;  &lt;p&gt;- Click on "Generate Form" icon  &lt;p&gt;&lt;img src="images/images_adb/Generator_GenerateFormButton.gif"&gt;  &lt;p&gt;- The &lt;strong&gt;ActionDataBase Generator&lt;/strong&gt; will generate the necessary and basic XML configuration file to edit the table that we are using, in this case "Customers". You can modify the XML configuration file using the 'Form XML "tab or using the "XML Form Editor " advanced editor.  &lt;p&gt;&lt;img src="images/images_adb/Generator_FormXMLTab.gif"&gt;  &lt;p&gt;- If you decide to use the advanced editor you need to remember that after publishing you should click the "Generate XML" icon to update the XML configuration.  &lt;p&gt;&lt;img src="images/images_adb/Generator_ValidateXMLButton.gif"&gt;&lt;/p&gt; &lt;p&gt;-Once we have the code we only have to paste it into the &lt;b&gt;&lt;i&gt;ActionDataBaseEditor&lt;/i&gt;&lt;/b&gt; configuration like we did with the &lt;b&gt;&lt;i&gt;ActionDataBaseGrid&lt;/i&gt;&lt;/b&gt;  &lt;p&gt;&lt;img src="images/images_adb/WebParts_ActionDataBaseEditor.gif"&gt;&lt;/p&gt; &lt;p&gt;- By default the &lt;strong&gt;ActionDataBaseEditor&lt;/strong&gt; will not display any data it will only show a blank form.  &lt;p&gt;&lt;img src="images/images_adb/ActionDataBaseEditor_First.gif"&gt;  &lt;p&gt;- This is a normal behavior, as to be able to show a record, the &lt;b&gt;&lt;i&gt;ActionDataBaseEditor&lt;/i&gt;&lt;/b&gt; must be connected to another webpart to obtain identifying data from the register that you want to view or edit.&lt;/p&gt;</content>
+  <keywords />
+  <parent>00000000-0000-0000-0000-000000000000</parent>
+  <isfrontpage>False</isfrontpage>
+  <showinlist>True</showinlist>
+  <ispublished>True</ispublished>
+  <datecreated>2008-04-28 22:54:36</datecreated>
+  <datemodified>2008-04-28 22:54:36</datemodified>
+</page>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="to_html.xslt"?><page>
+  <title>ActionDataBase Installation</title>
+  <titleorder />
+  <description />
+  <content>&lt;p&gt;&lt;b&gt;1.-&lt;/b&gt; Copy the solution file and the license file to its SharePoint server &lt;p&gt;&lt;b&gt;&lt;/b&gt; &lt;p&gt;&lt;b&gt;2.-&lt;/b&gt; Copy the license file (lic) in the folder c:\windows\system32 &lt;p&gt;&lt;b&gt;&lt;/b&gt; &lt;p&gt;&lt;b&gt;3.-&lt;/b&gt; Open a window commands (CMD) &lt;p&gt;&lt;b&gt;3.1&lt;/b&gt; - Go to the directory where the administration tool STSADM.EXE is, mostly in "c:\program files\common files\microsoft shared\web server extension\12\bin\" or "c:\archivos de programa\archivos comunes\microsoft shared\web server extension\12\bin\" &lt;p&gt;&lt;b&gt;3.2&lt;/b&gt; - Add the solution, typing in:&lt;pre&gt;stsadm -o add solution -filename SPSProfessional.SharePoint.WebParts.ActionDataBase.wsp 
+&lt;/pre&gt;
+&lt;p&gt;&lt;b&gt;3.3&lt;/b&gt; - Unfold the solution, typing in:&lt;pre&gt;stsadm -o deploysolution -name SPSProfessional.SharePoint.WebParts.ActionDataBase.wsp &lt;br&gt;-local -allowgacdeployment -allcontenturls -allowCasPolicies
+&lt;/pre&gt;</content>
+  <keywords />
+  <parent>00000000-0000-0000-0000-000000000000</parent>
+  <isfrontpage>False</isfrontpage>
+  <showinlist>True</showinlist>
+  <ispublished>True</ispublished>
+  <datecreated>2008-04-28 16:22:46</datecreated>
+  <datemodified>2008-04-28 16:24:44</datemodified>
+</page>
