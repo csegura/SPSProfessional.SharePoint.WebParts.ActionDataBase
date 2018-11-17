@@ -112,7 +112,7 @@ This section contains various fields that will be displayed in the editor as wel
 
 The structure is as follows (sample):  
 
-'''html
+```
 <Fields\>  
 <Field Name\="Freight"  
 Title\="Freight"  
@@ -135,14 +135,14 @@ ErrorMessage\="Number between 0 - 10000" />
 </Field\>  
 ...  
 </Fields\> 
-'''
+```
 
 
 ### Fields – Section for the fields that will conform the editor
 
 Example
 
-<Fields\> <Field ... /> </Fields\> 
+```<Fields\> <Field ... /> </Fields\>```
 
 ### Field – Element for each editor’s field
 
@@ -185,7 +185,7 @@ Example RightToLeft="true"
 
 Example:
 
-<TextBox Columns\="40" MaxLenght\="60" RightToLeft\="false" />
+```<TextBox Columns\="40" MaxLenght\="60" RightToLeft\="false" />```
 
 
 ![](images/Editor_TextField.gif)  
@@ -203,7 +203,7 @@ Columns** -  (integer) - columns number wide
 
 Example:
 
-<Memo Columns\="40" Rows\="10" MaxLenght\="300" />    
+```<Memo Columns\="40" Rows\="10" MaxLenght\="300" />```    
 
 ![](images/Editor_MemoField.gif)  
 Example: Memo  
@@ -227,7 +227,7 @@ TextField** -  (string) -  characters Maximum number
 
 Example:
 
-<Lookup TextField\="CompanyName" ValueField\="ShipperID" Table\="Shippers" /> 
+```<Lookup TextField\="CompanyName" ValueField\="ShipperID" Table\="Shippers" />``` 
 
 ![](images/Editor_LookupField.gif)  
 Example: Lookup  
@@ -244,7 +244,7 @@ Text** -  (string) -  Text to display
 
 Example:
 
-<ListItems Multiple\="false"\> <Item Text\="00001-AAAA" Value\="00001" /> <Item Text\="00002-BBBBB" Value\="00002" /> <Item Text\="00003-CCCCC" Value\="00003" Selected\="true" /> </ListItems\> 
+```<ListItems Multiple\="false"\> <Item Text\="00001-AAAA" Value\="00001" /> <Item Text\="00002-BBBBB" Value\="00002" /> <Item Text\="00003-CCCCC" Value\="00003" Selected\="true" /> </ListItems\>``` 
 
 
 
@@ -254,3 +254,147 @@ Example: ListItems as DropDownList Control
 
 ![](images/Editor_ListBoxControl.gif)  
 Example: ListItems as ListBox Control
+
+### DataBase – Connection
+
+
+**Attributes:  
+ConnectionString** - (string) -  Contains the connection chain to the SQL Server  
+
+Example
+
+``` <DataBase ConnectionString\="Data Source=W2K3;Initial Catalog=Northwind;  
+Integrated Security=True;User ID=;Password=" \>  
+<Table ....\>  
+<IdentityColumn .... />  
+</Table\> 
+</DataBase\>
+```  
+
+Contains element: Table
+
+
+### Table – Element for the configuration of the table that we are going to edit
+
+**Attributes:**  
+**Name** - (string) - table’s name that we are going to edit in the database  
+
+Example
+
+```<Table Name\="dbo.Customers"\>  <IdentityColumn Name\="CustomerID" Type\="NChar" /> </Table\>``` 
+
+Contains element: IdentityColumn  
+
+### IdentityColumn – Element for the keys to the table
+
+We will identify each one of the columns through which we will recover a unique table register (usually the columns table entity)  
+
+**Attributes:  
+****Name** - (string) -  Column name  
+**Type** - (string) – Data type (SQL Server)  
+**Incremental** - (boolean) - If it is a field with auto-increase  
+
+Example:
+
+```<Table Name\="dbo.Customers"\> <IdentityColumn Name\="CustomerID" Type\="NChar" Incremental\="false" /> </Table\> ```
+
+
+### Validations 
+
+At the moment there are 3 types of verifications or validations:
+
+*   by comparison (Compare)
+*   by regular expressions (RegExp)
+*   by ranges (Range)
+
+We can add more than one verifier to each field so that we can combine these. We will not be able to add two compare verifiers.
+
+### Verifier Compare
+
+Compare a user entry with a constant value or a proprietary value from another control (not yet implemented) through a comparison operator (less than equal to,  more than, among).
+
+The verifier by comparison requires that the attributes are completed:  
+
+![](images/Editor_ValidatorCompare.gif)
+
+\- **Message** - Text with the error message  
+\- **DataType** - data type to be used to verify: Currency, Double, Integer, String, Date.  
+\- **Value** - value to be compared to  
+\- **Operator** - operation type
+
+The possible operators are:  
+
+\- **DataTypeCheck** - it will check if the entered  data is from the type that was specified in DataType  
+\- **Equal** - Compares if the entered value is equal to the value declared in Value  
+\- **GreaterThan** - Compares if the entered value  is greater than the value declared in Value   
+\- **GreaterThanEqual** - Compares  if the  entered value is greater than or equal to the value declared in Value  
+\- **LessThan**  - Compares  if the entered value is less than the value declared in Value  
+\- **LessThanEqual**  - Compares  if the entered value is less or equal than the value declared in Value  
+\- **NotEqual** - Compares if the entered value is not equal to  the value declared in Value
+
+The result in XML configuration will be something like this.  
+
+```
+<Validators\> <Validator Type\="Compare"   
+DataType\="Integer" 
+
+ErrorMessage\="Must be greater than 100" 
+
+Operation\="GreaterThan" 
+
+Value\="100" /> </Validators\> 
+```
+
+
+
+### Verifier- RegExp
+
+
+
+Verify that the entry matches a pattern defined by a regular expression. Such verification allows to check predictable character sequences, like social security numbers, email addresses, phone numbers and post codes, among others.
+
+![](images/Editor_ValidatorRegExp.gif)
+
+The verifier RegExp requires the completion of the following attributes:  
+
+\- **Message** - Text with the error message  
+\- **Expression** - Regular expression to be used to verify
+
+The result in the XML configuration will be something like this.  
+
+```
+<Validators\> <Validator Type\="RegEx"   
+DataType\="None"   
+ErrorMessage\="Must be a valid email"   
+Expression\=[.\*@.\*\\.\*](mailto:.*@.*\.*)   
+Operation\="None" /> </Validators\> 
+```
+
+![](images/Editor_ValidatorRegExp1.gif)  
+
+
+### Verifier - Range
+
+
+
+Verify that a user entry is between the specified upper and lower limits. You can check the intervals between pairs of numbers, dates or alphabetic characters. The limits can be expressed as a constant.
+
+![](images/Editor_ValidatorRange.gif)
+
+The verifier by comparison requires the completion of the attributes:
+
+\- **Message** - Text with the error message  
+\- **DataType** - Data type to be used to verifier:  Currency, Double, Integer, String, Date.  
+\- **MaxValue** - Maximum Value  
+\- **MinValue** – Minimum Value  
+
+The result in the XML configuration will be something like this.  
+
+```
+<Validators\> <Validator Type\="Range"   
+DataType\="Integer"   
+ErrorMessage\="Must be in range 10-40"   
+Operation\="None"   
+MaxValue\="40"   
+MinValue\="10" /> </Validators\>
+´´´
