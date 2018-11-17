@@ -255,6 +255,110 @@ Example: ListItems as DropDownList Control
 ![](images/Editor_ListBoxControl.gif)  
 Example: ListItems as ListBox Control
 
+### ActionGrid Configuration
+
+```
+<SPSActionGridConfig xmlns:xsi\="[http://www.w3.org/2001/XMLSchema-instance](http://www.w3.org/2001/XMLSchema-instance)"   
+xmlns:xsd\="http://www.w3.org/2001/XMLSchema"\> <DataBase   
+ConnectionString\="Data Source=W2K3;Initial Catalog=Northwind;  
+Integrated Security=True;User ID=;Password=" /> <Grid Name\=""   
+Sortable\="true"   
+Pageable\="true"   
+PageSize\="10" /> <Query SelectCommand\="SELECT \* FROM \[dbo\].\[Orders\] WHERE CustomerID=@CustomerID" /> <Filter\> <Param Name\="CustomerID" Type\="NChar" Default\="" /> </Filter\> <Columns\> <DataField Name\="OrderID" Header\="OrderID"\> <ContextMenu\> <ContextMenuItem Name\="Select Row" Image\="/\_layouts/images/edititem.gif" Url\="Row" /> </ContextMenu\> </DataField\> <DataField Name\="CustomerID" Header\="CustomerID" /> <DataField Name\="EmployeeID" Header\="EmployeeID" /> <DataField Name\="OrderDate" Header\="OrderDate" /> <DataField Name\="RequiredDate" Header\="RequiredDate"\> <ContextMenu /> </DataField\> </Columns\> </SPSActionGridConfig\>
+```
+
+
+### DataBase - Element for the chain connection configuration
+
+**Attributes:  
+**  
+**ConnectionString** - (string) - Contains the chain connection to the SQL Server  
+
+Example:
+
+```<DataBase ConnectionString\="Data Source=W2K3;Initial Catalog=Northwind;  
+Integrated Security=True;User ID=;Password=" /> 
+```
+
+### Grid – Element for the grid configuration
+
+**Attributes:  
+
+Sortable** -  (boolean) true / false - If you are able to sort the grid by clicking on the  columns’ header.  
+**Pageable** - (boolean) true/false - If the grid will have pages  
+**PageSize** - (integer) - Number of items that will appear on each page  
+
+Example:
+
+```<Grid Sortable\="true" Pageable\="true" PageSize\="10" /> ```
+
+### Query – Element for the database consultation
+
+
+**Attributes:**  
+**  
+SelectCommand** - (string) - Sql SELECT Command  
+**Cache** - (boolean) true/false - If cache is used to recover/return data- by default it will be true  
+
+Example:
+
+```<Query SelectCommand\="SELECT \* FROM dbo.Customers" />``` 
+
+
+**Notes:**  
+It is appropriate that the SELECT query includes the explicit columns’ names   that we want to show in the grid. We can include columns’ names   that later they will not appear in the grid, however when we connect the grid to another webpart, we will be able to use these columns.
+
+The cache must be false, when we are using a grid alongside with the **ActionEditor** if what we want is that the grid shows the updates once the data is edited.
+
+### Filter – Element for the grid filter
+
+This section is optional and we will use it when we receive data from another webpart to filter the query data (header-lines), if this section is defined we will have to define the parameters too, in the WHERE clause SelectCommand attribute.  
+
+Example:
+
+```<Query SelectCommand\="SELECT Orders.OrderID, Orders.OrderDate, Orders.RequiredDate,   
+Employees.FirstName  
+FROM Orders   
+INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID   
+WHERE CustomerID=@CustomerID" /> <Filter\>  <Param Name\="CustomerID" Type\="NChar" Default\="" /> </Filter\>
+```
+
+### Param – Element for filter parameters
+
+These parameters are the ones that will appear to us as recipients when we connect this webpart to another. In the SelectCommand attribute from the Query component we will be able to use the parameters as we do in T-SQL.  
+
+**Attributes:**  
+**Name** -  (string) - Field’s name (Note: it must be included in WHERE clause with @)  
+**Type** - (string)  -  Data type (SQL Server)  
+**Default** - (string) - Value by default in case of not receiving data from another webpart. You can use in Default the same functions than in SPSRollUp see: **[Functions](/page/SPSRollUp-CAML-Functions.aspx)**  
+
+Example:
+
+```<Param Name\="CustomerID" Type\="String" Default\="ALFKI" />```   
+
+
+### Columns – Element for the columns configuration
+
+Example:
+
+<Columns\>  <DataField ... /> </Columns\> 
+
+### DataField – Section for the columns configuration
+
+**Attributes:**  
+
+**Name** -  (string) - Field’s name (Note: it is important that it must be included in SELECT)  
+**Header** - (string)  - Title that will appear in the header  
+**Format** - (string) - Format that the column will have Formats  
+
+**IsHtml** (boolean) **–** Used to show HtmlEncoded fields.  
+**Select** (boolean) **–** If set to true the column display as an Hyperlink, doing click on it the entire row is selected and the values are shipped to the consumers. (**Single click select row**)  
+
+Example:
+
+```<DataField Name\="ContactName" Header\="Contact Name" />```
+
+
 ### DataBase – Connection
 
 
@@ -397,4 +501,59 @@ ErrorMessage\="Must be in range 10-40"
 Operation\="None"   
 MaxValue\="40"   
 MinValue\="10" /> </Validators\>
-´´´
+```
+
+
+ActionGrid XML Configuration - Context Menus
+
+The contextual menus are the ones that we can enter and they are similar to those that appear in the SharePoint lists.
+
+![](images/Grid_ContextMenu.gif)
+
+### ContextMenu - Element for the context menu
+
+It gathers the various options that will appear in the contextual menu.  
+
+**Attributes  
+Fields** -  (string) -  Fields lists separated by commas  
+**Format** - (string)  - Equivalence between identifiers and fields  
+
+These attributes will enable us to transfer data as part of the  (QueryString) url in the context menu options.  
+
+Example:
+```
+<ContextMenu Fields\="CustomerID" Format\="ID=CustomerID"\>  <ContextMenuItem ... /> </ContextMenu\> 
+```
+Element Contains: ContextMenuItem  
+
+
+### ContextMenuItem – Element for the context menu options
+
+**Attributes:  
+Name** -  (string) - Description - text that will appear in the menu  
+**Image** - (string)  - image Url - ej: /\_layouts/images/edit.gif  
+**Url**  -  (string) - URL to which the option will skip, if the Row  value is specified here, when selecting this option, the row will be marked up as what is selected and if we are using this WebPart  as a server all columns specified in the SELECT command will be sent to the consumer webpart.  
+
+![](images/Grid_SelectedRow.gif)  
+Sample Selected row  
+
+If we have established values to Fields and Format in the ContextMenu section, we can create Urls that will be able to transfer these values.  
+
+Example:
+```
+<ContextMenuItem Name\="Select" Image\="/\_layouts/images/list.gif" Url\="Row" /> 
+```
+Example transferring values declared in the ContextMenu:  
+```
+<ContextMenuItem Name\="View Details"  
+Image\="/\_layouts/images/editicon.gif"  
+Url\="TestN2.aspx?ID=%ID%" />  
+```
+Full example:  
+```
+<DataField Name\="CompanyName" Header\="CompanyName"\>  <ContextMenu Fields\="CustomerID" Format\="ID=CustomerID"\>  <ContextMenuItem Name\="Select"   
+Image\="/\_layouts/images/list.gif" 
+Url\="Row" />  <ContextMenuItem Name\="View Details" 
+Image\="/\_layouts/images/editicon.gif" 
+Url\="TestN2.aspx?ID=%ID%" />  </ContextMenu\> </DataField\>
+```
