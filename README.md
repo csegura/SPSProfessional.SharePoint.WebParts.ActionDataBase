@@ -107,3 +107,150 @@ Next we will configure an **ActionDataBaseEditor** to edit data from the"Custome
 ![](images/ActionDataBaseEditor_First.gif)
 
 \- This is a normal behavior, as to be able to show a record, the **_ActionDataBaseEditor_** must be connected to another webpart to obtain identifying data from the register that you want to view or edit.
+
+This section contains various fields that will be displayed in the editor as well as the controls in which they will be displayed and the verifications that are required for each of them.
+
+The structure is as follows (sample):  
+
+'''html
+<Fields\>  
+<Field Name\="Freight"  
+Title\="Freight"  
+Type\="Money"  
+Control\="TextBox"  
+Required\="true"  
+DefaultValue\=""  
+DisplayFormat\=""  
+New\="Enabled"  
+Edit\="Enabled"  
+View\="Enabled"\>  
+<TextBox Columns\="20" RightToLeft\="true" />  
+<Validators\>  
+<Validator Type\="Range"  
+DataType\="decimal"  
+MaxValue\="10000"  
+MinValue\="0"  
+ErrorMessage\="Number between 0 - 10000" />  
+</Validators\>  
+</Field\>  
+...  
+</Fields\> 
+'''
+
+
+### Fields – Section for the fields that will conform the editor
+
+Example
+
+<Fields\> <Field ... /> </Fields\> 
+
+### Field – Element for each editor’s field
+
+**Attributes:**  
+**Name** -  (string) – Field’s name  
+**Title** -  (string) - Title, description   
+**Type** - (string)  -  (SQL Server) Data type  
+**Control** - (string)  - control type to be used to edit (TextBox, Lookup, Date, DateTime, Memo, ListBox, DropDownList)  
+**Required** - (boolean) true/false   - If is a required field(implicitly adds the required verification)  
+
+![](images/Editor_RequiredFields.gif)  
+Required fields  
+**  
+Default** - (string)  - field by default to register. There are a number of functions that can be used as default values see: **[Functions](http://www.spsprofessional.com/page/SPSRollUp-CAML-Functions.aspx)**  
+**DisplayFormat** - (string)  - mask to view the field  See: Formats  
+
+**New** - (string)  Enabled/Disabled/Hidden - - If the field will be active when it will register a new record  
+**Edit**  - (string)  Enabled/Disabled/Hidden -  - If the field will be active when it will register a new record  
+**View** - (string)  Enabled/Disabled/Hidden - - If the field will be made visual
+
+Enabled - The field is and shows itself active  
+Disabled - The field shows itself but it is not enabled  
+Hidden - The field doesn’t show itself  
+
+Example; See above  
+
+Edit controls  
+
+
+### TextBox - Defines a TextBox control
+
+**Attributes:  
+Columns** -  (integer) - columns number wide  
+**MaxLenght** -  (integer) -  Characters maximum number  
+**RightToLeft** - (boolean)  -If you write from right to left
+
+
+![](images/Editor_TextLeft.gif)  
+Example RightToLeft="true"  
+
+Example:
+
+<TextBox Columns\="40" MaxLenght\="60" RightToLeft\="false" />
+
+
+![](images/Editor_TextField.gif)  
+Example: TextBox  
+
+
+### Memo – Defines a Memo  control Memo with an enrich text editor
+
+
+
+**Attributes:  
+Columns** -  (integer) - columns number wide  
+**Rows** -  (integer) - rows number  
+**MaxLenght** -  (integer) - characters Maximum number  
+
+Example:
+
+<Memo Columns\="40" Rows\="10" MaxLenght\="300" />    
+
+![](images/Editor_MemoField.gif)  
+Example: Memo  
+
+
+### Date y DateTime – Definition is not available
+
+Nothing to configure here. If you select this control all parameters necessaries
+
+![](images/Editor_DateFields.gif)
+
+### Lookup – Defines a Memo control with a enrich text editor
+
+
+
+**Attributes:  
+TextField** -  (string) -  characters Maximum number  
+**ValueField** -  (string) - Field that contains the values  
+**Table** - (string) – Database field  
+**DisplayFormat** - (string) - Format to view text field - See: Formats  
+
+Example:
+
+<Lookup TextField\="CompanyName" ValueField\="ShipperID" Table\="Shippers" /> 
+
+![](images/Editor_LookupField.gif)  
+Example: Lookup  
+
+
+### ListItems - Define a ListBox or DropDownList control
+
+Inside list items section you can add items. Items are Text, Value pairs. You can use it with the ListBox or DropDownList controls.
+
+**Attributes:  
+Text** -  (string) -  Text to display  
+**Value** -  (string) - Value to store in the field  
+**Selected** - (boolean) – If is the default selected value  
+
+Example:
+
+<ListItems Multiple\="false"\> <Item Text\="00001-AAAA" Value\="00001" /> <Item Text\="00002-BBBBB" Value\="00002" /> <Item Text\="00003-CCCCC" Value\="00003" Selected\="true" /> </ListItems\> 
+
+
+
+![](images/Editor_DropDownListControl.gif)  
+Example: ListItems as DropDownList Control  
+
+
+![](images/Editor_ListBoxControl.gif)  
+Example: ListItems as ListBox Control
