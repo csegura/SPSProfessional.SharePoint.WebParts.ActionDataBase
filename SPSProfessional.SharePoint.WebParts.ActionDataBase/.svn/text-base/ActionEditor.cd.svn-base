@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="SPSProfessional.SharePoint.WebParts.ActionDataBase.ActionEditor">
+    <Position X="0.5" Y="0.5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>DCCIGgQAggAAIBAAAAAAAAACAAAAAAIgAAAEAAAAAAA=</HashCode>
+      <FileName>ActionEditor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_actionEditorControl" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SPSProfessional.SharePoint.WebParts.ActionDataBase.ActionEditorFormControl">
+    <Position X="11.75" Y="4" Width="6" />
+    <TypeIdentifier>
+      <HashCode>CAAECAAACBiQABAAgAiAAAAAAAQAgAAABQAEAABAhAA=</HashCode>
+      <FileName>ActionEditorFormControl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_actionEditorFormValues" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SPSProfessional.SharePoint.WebParts.ActionDataBase.ActionEditorToolBarControl">
+    <Position X="18.25" Y="0.5" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACABCACAIBAAAAAAACAQAAAQ4JAAAQACgAAAIAA=</HashCode>
+      <FileName>ActionEditorToolBarControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SPSProfessional.SharePoint.WebParts.ActionDataBase.ActionEditorControl">
+    <Position X="6.25" Y="0.5" Width="4.75" />
+    <AssociationLine Name="_actionEditorForm" Type="SPSProfessional.SharePoint.WebParts.ActionDataBase.ActionEditorFormControl" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11" Y="3.511" />
+        <Point X="11.375" Y="3.511" />
+        <Point X="11.375" Y="6.141" />
+        <Point X="11.75" Y="6.141" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.072" Y="-0.32" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ACAICBIAOCCYABAAAAAyGAIAFIIAgBSAEhAEAKAMAIA=</HashCode>
+      <FileName>ActionEditorControl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_actionEditorForm" />
+      <Field Name="_actionToolBar" />
+      <Field Name="_actionDataBase" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SPSProfessional.SharePoint.WebParts.ActionDataBase.ActionEditorFormValues">
+    <Position X="12.25" Y="12.75" Width="5" />
+    <TypeIdentifier>
+      <HashCode>CAAACAAAAQAAAAAAQAAAAAAAAAAAAAADAAAAAAgAAAA=</HashCode>
+      <FileName>ActionEditorFormValues.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPSProfessional.SharePoint.WebParts.ActionDataBase.ActionDataBase">
+    <Position X="4.25" Y="7.5" Width="6.25" />
+    <TypeIdentifier>
+      <HashCode>QAAICQBQACiEAAMAAwSAASAQAAQAAAgJAAgAAAzCDJA=</HashCode>
+      <FileName>ActionDataBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="SPSProfessional.SharePoint.WebParts.ActionDataBase.ActionDataBaseOperation">
+    <Position X="0.75" Y="8.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAIAgAAEAAEAAAAAAAAEAAAA=</HashCode>
+      <FileName>ActionDataBaseOperation.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SPSProfessional.SharePoint.WebParts.ActionDataBase.ActionEditorFormMode">
+    <Position X="0.75" Y="10.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAACAAAAAAAAAAAAABAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ActionEditorFormMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
